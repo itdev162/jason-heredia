@@ -1,11 +1,11 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import slugify from 'slugify';
 import './styles.css';
 
 const PostListItem = props => {
     const { post, clickPost, deletePost } = props;
-    const history = useHistory();
+    const history = useNavigate();
 
     const handleClickPost = post => {
     const slug = slugify(post.title, { lower: true });
