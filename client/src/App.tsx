@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PostList from './components/PostList/PostList';
 import Post from './components/Post/Post';
 
@@ -54,8 +54,8 @@ class App extends React.Component {
             BlogBox
         </header>
           <main className="App-content">
-            <Switch>
-              <Route exact path="/">
+            <Routes>
+              <Route path="/">
                 <PostList 
                   posts={posts} 
                   clickPost={this.viewPost}
@@ -65,7 +65,7 @@ class App extends React.Component {
               <Route path="/posts/:postId">
                 <Post post={post} />
               </Route>
-            </Switch>
+            </Routes>
           </main>
         </div>
       </Router>
